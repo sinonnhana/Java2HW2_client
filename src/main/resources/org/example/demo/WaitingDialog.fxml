@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.Rectangle?>
+
+<StackPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml" fx:controller="org.example.demo.MainController"
+           style="-fx-background-color: linear-gradient(to bottom, #1E1E2F, #0D0D1A);">
+
+    <!-- 背景装饰 -->
+    <Rectangle width="600" height="400" arcWidth="30" arcHeight="30"
+               style="-fx-fill: radial-gradient(center 50% 50%, radius 50%, #2C2C54, #1B1B2F); -fx-opacity: 0.85;" />
+
+    <!-- 主体布局 -->
+    <VBox spacing="20" alignment="CENTER"
+          style="-fx-padding: 30; -fx-border-radius: 20; -fx-background-radius: 20;">
+
+        <!-- 标题 -->
+        <Label fx:id="dialogTitle_ok" text="Waiting for Opponent..."
+               style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #FFFFFF; -fx-effect: dropshadow(gaussian, #666666, 5, 0.5, 0, 0);" />
+
+        <!-- 动画效果的装饰 -->
+        <StackPane alignment="CENTER" style="-fx-padding: 20;">
+            <Circle radius="50" fill="transparent" stroke="#4CAF50" strokeWidth="5"
+                    style="-fx-opacity: 0.8; -fx-effect: dropshadow(gaussian, #4CAF50, 10, 0.5, 0, 0);" />
+            <Circle radius="30" fill="#4CAF50" style="-fx-opacity: 0.3;" />
+            <Label text="⏳" style="-fx-font-size: 36px; -fx-text-fill: #FFFFFF;" />
+        </StackPane>
+
+        <!-- 消息内容 -->
+        <Label fx:id="dialogMessage_ok" text="Please wait while we match you with an opponent."
+               wrapText="true"
+               style="-fx-font-size: 16px; -fx-text-fill: #DDDDDD; -fx-alignment: center;" />
+    </VBox>
+</StackPane>

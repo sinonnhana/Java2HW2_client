@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="org.example.demo.MainController"
+      prefHeight="450.0" prefWidth="600.0"
+      style="-fx-background-color: radial-gradient(center 50% 50%, radius 70%, #2C2C54, #1B1B2F); -fx-padding: 30; -fx-border-radius: 20; -fx-background-radius: 20; -fx-border-width: 4; -fx-border-color: #6A82FB;"
+      spacing="25" alignment="CENTER">
+
+    <!-- 标题 -->
+    <Label text="Welcome Back!"
+           style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #FFFFFF; -fx-effect: dropshadow(gaussian, #6A82FB, 5, 0.7, 0, 0);" />
+
+    <!-- 标题下的分割线 -->
+    <Separator prefWidth="400" style="-fx-background-color: #6A82FB;" />
+
+    <!-- 输入框容器 -->
+    <VBox spacing="20" alignment="CENTER">
+        <TextField fx:id="usernameField" promptText="Enter your username"
+                   style="-fx-pref-width: 300px; -fx-background-color: #333333; -fx-text-fill: #FFFFFF; -fx-prompt-text-fill: #BBBBBB; -fx-background-radius: 15; -fx-border-radius: 15; -fx-border-width: 2; -fx-border-color: #6A82FB; -fx-padding: 10;" />
+        <PasswordField fx:id="passwordField" promptText="Enter your password"
+                       style="-fx-pref-width: 300px; -fx-background-color: #333333; -fx-text-fill: #FFFFFF; -fx-prompt-text-fill: #BBBBBB; -fx-background-radius: 15; -fx-border-radius: 15; -fx-border-width: 2; -fx-border-color: #6A82FB; -fx-padding: 10;" />
+    </VBox>
+
+    <!-- 按钮容器 -->
+    <HBox spacing="30" alignment="CENTER">
+        <Button text="Login" onAction="#handleLoginSubmit"
+                style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-background-color: linear-gradient(to right, #6A82FB, #FC5C7D); -fx-text-fill: white; -fx-background-radius: 20; -fx-padding: 10 30; -fx-cursor: hand; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 10, 0.7, 0, 0);" />
+        <Button text="Back" onAction="#handleBack"
+                style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-background-color: linear-gradient(to right, #FC5C7D, #6A82FB); -fx-text-fill: white; -fx-background-radius: 20; -fx-padding: 10 30; -fx-cursor: hand; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 10, 0.7, 0, 0);" />
+    </HBox>
+
+    <!-- 底部装饰标签 -->
+    <Label text="Secure Login System"
+           style="-fx-font-size: 14px; -fx-text-fill: #BBBBBB;" />
+</VBox>

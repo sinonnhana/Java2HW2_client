@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="org.example.demo.MainController"
+      prefHeight="600.0" prefWidth="800.0"
+      style="-fx-background-color: radial-gradient(center 50% 50%, radius 70%, #0F0C29, #302B63, #24243E); -fx-padding: 30; -fx-border-radius: 20; -fx-background-radius: 20; -fx-border-width: 5; -fx-border-color: linear-gradient(to right, #6A82FB, #FC5C7D, #12D8FA);"
+      spacing="30" alignment="CENTER">
+
+    <!-- 标题 -->
+    <Text text="Select Your Opponent"
+          style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-fill: linear-gradient(to right, #FC5C7D, #6A82FB, #12D8FA); -fx-effect: dropshadow(gaussian, rgba(255,255,255,0.9), 15, 0.7, 0, 0);" />
+
+    <!-- 分割线 -->
+    <Separator prefWidth="700" style="-fx-background-color: linear-gradient(to right, #6A82FB, #FC5C7D);" />
+
+    <!-- 滚动区域 -->
+    <ScrollPane fitToWidth="true" style="-fx-background: transparent; -fx-padding: 10; -fx-border-color: transparent;">
+        <VBox fx:id="playerListContainer" spacing="20" alignment="CENTER"
+              style="-fx-padding: 10; -fx-background-color: rgba(50, 50, 70, 0.8); -fx-background-radius: 15;">
+            <!-- 动态生成玩家卡片 -->
+        </VBox>
+    </ScrollPane>
+
+    <!-- 返回按钮 -->
+    <Button text="Back" onAction="#showUsersBack"
+            style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-background-color: linear-gradient(to right, #FF512F, #F09819); -fx-text-fill: white; -fx-background-radius: 25; -fx-padding: 10 30; -fx-cursor: hand; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 10, 0.8, 0, 0);" />
+</VBox>

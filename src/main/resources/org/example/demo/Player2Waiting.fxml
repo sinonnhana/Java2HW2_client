@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml" fx:controller="org.example.demo.MainController"
+           prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: linear-gradient(to bottom, #1E1E2F, #0D0D1A);">
+
+    <!-- 背景装饰 -->
+    <VBox spacing="20" alignment="CENTER"
+          style="-fx-padding: 30; -fx-background-radius: 20; -fx-border-radius: 20; -fx-border-color: #FF8C00; -fx-border-width: 3; -fx-background-color: radial-gradient(center 50% 50%, radius 70%, #2C2C54, #1B1B2F);">
+
+        <!-- 标题 -->
+        <Label text="You are Player 2"
+               style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #FFFFFF; -fx-effect: dropshadow(gaussian, #FF8C00, 5, 0.5, 0, 0);" />
+        <Label text="Please wait while Player 1 selects the board size..."
+               style="-fx-font-size: 16px; -fx-text-fill: #DDDDDD; -fx-alignment: center;" />
+
+        <!-- 动画装饰 -->
+        <StackPane alignment="CENTER" style="-fx-padding: 20;">
+            <Label text="⏳" style="-fx-font-size: 36px; -fx-text-fill: #FF8C00;" />
+        </StackPane>
+    </VBox>
+</StackPane>

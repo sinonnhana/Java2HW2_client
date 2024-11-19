@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+
+<VBox xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml" fx:controller="org.example.demo.MainController"
+      spacing="20" alignment="CENTER"
+      style="-fx-background-color: radial-gradient(center 50% 50%, radius 70%, #FF5E57, #D7263D); -fx-padding: 30; -fx-background-radius: 20; -fx-border-radius: 20; -fx-border-color: #B3001B; -fx-border-width: 3;">
+
+    <!-- 标题 -->
+    <Label fx:id="dialogTitle_err" text="Error"
+           style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: white;" />
+
+    <!-- 消息内容 -->
+    <Label fx:id="dialogMessage_err" text="An error has occurred."
+           wrapText="true"
+           style="-fx-font-size: 16px; -fx-text-fill: #FFCCCC;" />
+
+    <!-- 按钮 -->
+    <HBox spacing="20" alignment="CENTER">
+        <Button fx:id="okButton" text="OK" onAction=
+                style="-fx-font-size: 14px; -fx-background-color: #D7263D; -fx-text-fill: white; -fx-background-radius: 10; -fx-padding: 10 20; -fx-cursor: hand;" />
+    </HBox>
+</VBox>

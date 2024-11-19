@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="org.example.demo.MainController"
+      prefHeight="450.0" prefWidth="600.0"
+      style="-fx-background-color: linear-gradient(to bottom, #89CFF0, #CAE7F5); -fx-padding: 30; -fx-border-radius: 20; -fx-background-radius: 20; -fx-border-width: 4; -fx-border-color: #4682B4;"
+      spacing="25" alignment="CENTER">
+
+    <!-- 标题 -->
+    <Label text="Create Your Account"
+           style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #333333; -fx-effect: dropshadow(gaussian, #89CFF0, 5, 0.5, 0, 0);" />
+
+    <!-- 标题下的分割线 -->
+    <Separator prefWidth="400" style="-fx-background-color: #4682B4;" />
+
+    <!-- 输入框容器 -->
+    <VBox spacing="20" alignment="CENTER">
+        <TextField fx:id="usernameField" promptText="Enter your username"
+                   style="-fx-pref-width: 300px; -fx-background-color: #FFFFFF; -fx-text-fill: #333333; -fx-prompt-text-fill: #888888; -fx-background-radius: 15; -fx-border-radius: 15; -fx-border-width: 2; -fx-border-color: #89CFF0; -fx-padding: 10;" />
+        <PasswordField fx:id="passwordField" promptText="Enter your password"
+                       style="-fx-pref-width: 300px; -fx-background-color: #FFFFFF; -fx-text-fill: #333333; -fx-prompt-text-fill: #888888; -fx-background-radius: 15; -fx-border-radius: 15; -fx-border-width: 2; -fx-border-color: #89CFF0; -fx-padding: 10;" />
+    </VBox>
+
+    <!-- 按钮容器 -->
+    <HBox spacing="30" alignment="CENTER">
+        <Button text="Register" onAction="#handleRegisterSubmit"
+                style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-background-color: linear-gradient(to right, #89CFF0, #4682B4); -fx-text-fill: #FFFFFF; -fx-background-radius: 20; -fx-padding: 10 30; -fx-cursor: hand; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 10, 0.5, 0, 0);" />
+        <Button text="Back" onAction="#handleBack"
+                style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-background-color: linear-gradient(to right, #CAE7F5, #89CFF0); -fx-text-fill: #333333; -fx-background-radius: 20; -fx-padding: 10 30; -fx-cursor: hand; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 10, 0.5, 0, 0);" />
+    </HBox>
+
+    <!-- 底部提示 -->
+    <Label text="Join us and start your journey"
+           style="-fx-font-size: 14px; -fx-text-fill: #666666;" />
+</VBox>

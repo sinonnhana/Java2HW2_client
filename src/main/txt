@@ -1,0 +1,73 @@
+import java.io.*;
+import java.net.*;
+import java.util.*;
+import java.util.concurrent.*;
+
+public class GameServer {
+    private static final int PORT = 12345;
+    private static final List<Socket> waitingQueue = new CopyOnWriteArrayList<>();
+
+    public static void main(String[] args) {
+        try (ServerSocket serverSocket = new ServerSocket(PORT)) {
+            System.out.println("服务器已启动，等待客户端连接...");
+
+            // 服务器持续接受客户端连接
+            while (true) {
+                Socket clientSocket = serverSocket.accept();
+                System.out.println("客户端 " + clientSocket.getInetAddress() + " 已连接");
+
+                // 将客户端加入等待队列并通知进入等待状态
+                new Thread(new ClientHandler(clientSocket)).start();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void checkForPairs() {
+        if (waitingQueue.size() >= 2) {
+            synchronized (waitingQueue) {
+                if (waitingQueue.size() >= 2) {
+                    Socket client1 = waitingQueue.remove(0);
+                    Socket client2 = waitingQueue.remove(0);
+
+                    // 通知配对成功
+                    sendMessage(client1, "匹配成功，进入游戏");
+                    sendMessage(client2, "匹配成功，进入游戏");
+                    System.out.println("配对成功：客户端1和客户端2");
+                }
+            }
+        }
+    }
+
+    private static void sendMessage(Socket client, String message) {
+        try {
+            PrintWriter out = new PrintWriter(client.getOutputStream(), true);
+            out.println(message);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static class ClientHandler implements Runnable {
+        private final Socket clientSocket;
+
+        public ClientHandler(Socket socket) {
+            this.clientSocket = socket;
+        }
+
+        @Override
+        public void run() {
+            try {
+                // 通知客户端进入等待状态
+                sendMessage(clientSocket, "进入等待状态");
+                waitingQueue.add(clientSocket);
+
+                // 检查等待队列进行配对
+                checkForPairs();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+}
